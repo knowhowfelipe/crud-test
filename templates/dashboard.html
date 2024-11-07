@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <a href="{{ url_for('main.create_item') }}">Criar Item</a>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - <a href="{{ url_for('main.edit_item', id=item.id) }}">Editar</a> | <a href="{{ url_for('main.delete_item', id=item.id) }}">Deletar</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
